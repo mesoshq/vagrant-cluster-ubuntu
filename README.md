@@ -1,8 +1,8 @@
 # Ubuntu 14.04 cluster via Vagrant
 
 This repo provides a template Vagrantfile to create a Ubuntu 14.04 cluster using the VirtualBox software hypervisor.
-After setup is complete you will have a five Ubuntu virtual machines running on your local machine. Please be aware that the standard memory per instance is set to 1536 MB, and the cpu to 1.
-That means by default you'll need a machine capable to free up to 5 cpus and 7680 MB memory.
+After setup is complete you will have three Ubuntu virtual machines running on your local machine. Please be aware that the standard memory per instance is set to 3072 MB, and the number of cpus to 2.
+That means by default you'll need a machine capable to free up to 6 cpu cores and 9216 MB memory.
 
 ## Streamlined setup
 
@@ -31,7 +31,7 @@ vagrant ssh ubuntu-01
 
 `vagrant up` triggers Vagrant to download the `ubuntu/trusty64` box (if necessary) and (re)launch the instances
 
-`vagrant ssh <hostname>` connects you to the virtual machine. The hostnames are ubuntu-01 to ubuntu-05.
+`vagrant ssh <hostname>` connects you to the virtual machine. The hostnames are ubuntu-01 to ubuntu-05, the IPs are from 172.17.10.101 to 172.17.10.105.
 
 Configuration is stored in the directory so you can always return to this machine by executing vagrant ssh from the directory where the Vagrantfile was located.
 
