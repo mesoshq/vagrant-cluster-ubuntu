@@ -1,0 +1,20 @@
+---
+cluster_name: mesosctl_cluster_ubuntu
+os: ubuntu-trusty
+os_family: Debian
+ssh_key_path: ~/.vagrant.d/insecure_private_key
+ssh_port: 22
+ssh_user: vagrant
+dns_servers:
+  - 8.8.8.8
+  - 8.8.4.4
+masters:
+  - 172.17.10.101
+  - 172.17.10.102
+  - 172.17.10.103
+agents:
+  - 172.17.10.101
+  - 172.17.10.102
+  - 172.17.10.103
+registry:
+  - 172.17.10.101
