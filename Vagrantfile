@@ -40,6 +40,12 @@ Vagrant.configure("2") do |config|
 
   config.vm.box = "ubuntu/trusty64"
 
+  # enable hostmanager
+  config.hostmanager.enabled = true
+
+  # configure the host's /etc/hosts
+  config.hostmanager.manage_host = true
+
   (1..$num_instances).each do |i|
     config.vm.define vm_name = "%s-%02d" % [$instance_name_prefix, i] do |config|
       config.vm.hostname = vm_name
@@ -70,7 +76,7 @@ Vagrant.configure("2") do |config|
       ip = "172.17.10.#{i+100}"
       config.vm.network :private_network, ip: ip
 
-      config.vm.provision :shell, path: "install-ansible-dependencies.sh"
+      #config.vm.provision :shell, path: "install-ansible-dependencies.sh"
 
     end
   end
